@@ -23,6 +23,15 @@
             color: lightseagreen;
             text-transform: uppercase;
         }
+        .grid {
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            background-color:black;
+            width:100%;
+            height:50vw;
+            margin:auto;
+            overflow:hidden;
+        }
     </style>
 
 </head>
@@ -31,7 +40,7 @@
 <?php
 
 // Задание 1
-
+/*
 echo 'Задание 1. Первые буквы слов перевести в верхний регистр <br><br>';
 
 $string_1 = 'london is the capital of great britain';
@@ -167,12 +176,15 @@ foreach ($array_13 as $key => $item) {
     echo '<li><a href="' . $key . '.php">' . $item . '</a>';
 }
 echo '</ul><br>';
-
+*/
 // Задание 14
 
 echo '<hr> Задание 14. Красные квадраты <br><br>';
 
-echo '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;background-color:black;width:100%;height:50vw;margin:auto;overflow:hidden;">';
+$schet = 0;
+
+echo '<div class="grid">';
+
 for ($i = 1; $i <= 50; $i++) {
     $random_14 = rand(1, 80);
     $rand = rand(0, 1);
@@ -182,10 +194,14 @@ for ($i = 1; $i <= 50; $i++) {
             echo '<div style="width:' . ($random_14 * 1.5) . '%;height:' . ($random_14 * 1.5) . '%;margin-left:' . rand(0, 50) . '%;margin-top:' . rand(0, 50) . '%;background-color:red;"></div>';
         }
         else echo '<div style="width:' . $random_14 . '%;height:' . $random_14 . '%;margin-left:' . rand(0, 50) . '%;margin-top:' . rand(0, 50) . '%;background-color:red;"></div>';
+        $schet++;
     }
     else echo '<div style="width:' . $random_14 . '%;height:' . $random_14 . '%;margin-left:' . rand(0, 50) . '%;margin-top:' . rand(0, 50) . '%;"></div>';
 }
+
 echo '</div>';
+
+echo 'Количество квадратов: ' . $schet;
 
 // Задание 15
 
